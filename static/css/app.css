@@ -1,0 +1,9 @@
+.navbar-brand {
+    font-family: 'Noto Serif', serif;
+  }
+
+.alert-custom {
+    margin-top:18px;
+    background-color:#bbc2bc;
+    color:rgb(44, 42, 42);
+}
