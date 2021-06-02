@@ -125,3 +125,30 @@ a, a:hover, a:focus {
   opacity: 1;
   margin: 5px auto;
 }
+
+.form_custom_class {
+  display:block;
+  /* background-color:rgb(232, 234, 236) ; */
+  justify-content: center;
+  margin:40%;
+}
+.form_custom_class h2{
+  font-size: 0.9rem;
+  color: rgb(38, 39, 48);
+  margin-bottom: 0.4rem;
+  width: 406px;
+}
+.custom_textbox {
+  background-color: rgb(240, 242, 246);
+  color:black;
+  transition-duration: 200ms;
+  padding:10px 14px 14px 10px;
+  border:none;
+  border-radius: 7px;
+  width :500px;
+}
+.custom_textbox:hover .custom_textbox:focus {
+  border-radius: 7px;
+  border-color:rgb(180, 176, 176);
+  border:none;
+}
