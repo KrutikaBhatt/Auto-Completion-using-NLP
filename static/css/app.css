@@ -167,3 +167,25 @@ a, a:hover, a:focus {
 #form_custom_class.active {
   margin:40px 30px 40px 350px;
 }
+.increment_inputs{
+  display:flex;
+}
+
+.predict_now{
+  margin-top:50px;
+  width:100px;
+  height:30px;
+  border:1px solid rgb(148, 147, 147);
+  border-radius: 5px;
+  /* border-color: rgb(148, 147, 147); */
+  font-size: 0.9rem;
+  background-color: #fff;
+  color:black;
+  cursor:pointer;
+}
+.predict_now:focus {
+  background-color:rgb(240, 242, 246);
+  border:1px solid rgb(126, 125, 125);
+  border-radius:5px;
+  
+}

@@ -48,17 +48,20 @@
                     <h3>Starting charachter of next predicted word </h3>
                     <input type="text" class="custom_textbox" id="custom_textbox_id">
                     <h3>Enter the k-smoothning value</h3>
-                    <input type="text" class="form-control input-number" value="0.00" min="0.00" max="1.00">
+                    <div class ="increment_inputs">
+                    <input type="number" class="form-control input-number" value="0.01" min="0.01" max="1.00" id="k-smooth-input">
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-default btn-number" data-type="plus" >
+                        <button type="button" class="btn btn-default btn-number" id="plus_button">
                             <i class="fa fa-plus" ></i>
                         </button>
                     </span>
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus">
+                        <button type="button" class="btn btn-default btn-number" id="minus_button">
                             <i class="fa fa-minus"></i>
                         </button>
                     </span>
+                    </div>
+                    <button class="predict_now">Predict</button>
                 </div>
            </div>
 
