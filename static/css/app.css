@@ -126,17 +126,29 @@ a, a:hover, a:focus {
   margin: 5px auto;
 }
 
-.form_custom_class {
+#form_custom_class {
   display:block;
   /* background-color:rgb(232, 234, 236) ; */
   justify-content: center;
-  margin:40%;
+  margin:40px 30px 40px 130px;
 }
-.form_custom_class h2{
+#form_custom_class h2{
   font-size: 0.9rem;
   color: rgb(38, 39, 48);
   margin-bottom: 0.4rem;
   width: 406px;
+}
+#form_custom_class h1{
+  margin-top:35px;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+#form_custom_class h3{
+  margin-top:30px;
+  font-size: 0.8rem;
+  color: rgb(94, 92, 92);
+  margin-bottom: 0.4rem;
 }
 .custom_textbox {
   background-color: rgb(240, 242, 246);
@@ -145,10 +157,13 @@ a, a:hover, a:focus {
   padding:10px 14px 14px 10px;
   border:none;
   border-radius: 7px;
-  width :500px;
+  width :550px;
 }
 .custom_textbox:hover .custom_textbox:focus {
   border-radius: 7px;
   border-color:rgb(180, 176, 176);
   border:none;
+}
+#form_custom_class.active {
+  margin:40px 30px 40px 350px;
 }

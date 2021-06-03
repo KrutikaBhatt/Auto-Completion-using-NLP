@@ -8,7 +8,6 @@
         <link rel="stylesheet" href="{% static 'css/app.css' %}" >
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="{% static 'js/slidebar.js' %}"></script>
-
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
        
@@ -42,9 +41,24 @@
                     <span></span>
                     <span></span>
                 </button>
-                <div class="form_custom_class">
+                <div id="form_custom_class" >
                     <h2>Enter a sentence</h2>
-                    <input type="text" class="custom_textbox">
+                    <input type="text" class="custom_textbox" id="custom_textbox_id">
+                    <h1>Optional Inputs</h1>
+                    <h3>Starting charachter of next predicted word </h3>
+                    <input type="text" class="custom_textbox" id="custom_textbox_id">
+                    <h3>Enter the k-smoothning value</h3>
+                    <input type="text" class="form-control input-number" value="0.00" min="0.00" max="1.00">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default btn-number" data-type="plus" >
+                            <i class="fa fa-plus" ></i>
+                        </button>
+                    </span>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </span>
                 </div>
            </div>
 
