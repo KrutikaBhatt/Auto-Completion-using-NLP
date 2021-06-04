@@ -10,6 +10,9 @@
         <script type="text/javascript" src="{% static 'js/slidebar.js' %}"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
        
     </head>
     <body>
@@ -41,28 +44,34 @@
                     <span></span>
                     <span></span>
                 </button>
+                <form method="POST">
+                 {% csrf_token %}
                 <div id="form_custom_class" >
                     <h2>Enter a sentence</h2>
-                    <input type="text" class="custom_textbox" id="custom_textbox_id">
+                    {{ forms.sentence }}
                     <h1>Optional Inputs</h1>
                     <h3>Starting charachter of next predicted word </h3>
-                    <input type="text" class="custom_textbox" id="custom_textbox_id">
+                    {{ forms.start_letter }}
                     <h3>Enter the k-smoothning value</h3>
                     <div class ="increment_inputs">
-                    <input type="number" class="form-control input-number" value="0.01" min="0.01" max="1.00" id="k-smooth-input">
+                    {{ forms.smooth_num }}
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-default btn-number" id="plus_button">
+                        <button type="button" class="btn btn-default btn-number btn-plus" id="plus_button">
                             <i class="fa fa-plus" ></i>
                         </button>
                     </span>
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-default btn-number" id="minus_button">
+                        <button type="button" class="btn btn-default btn-number btn-minus" id="minus_button">
                             <i class="fa fa-minus"></i>
                         </button>
                     </span>
                     </div>
-                    <button class="predict_now">Predict</button>
+                    {% if message  %}
+                    <div class='notification {{ mesg_class }}'>{{ message }}</div>
+                    {% endif %}
+                    <button class="predict_now" type="Submit" name="submit" value="Submit">Predict</button>
                 </div>
+                </form>
            </div>
 
        </div>
