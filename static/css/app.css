@@ -215,3 +215,15 @@ input[type=number]::-webkit-outer-spin-button {
   color:rgb(68, 66, 66);
   
 }
+.visible_spinner {
+  position:absolute; 
+  right:100px;
+  top:50px;
+}
+.not-visible{
+  display: none;
+}
+.spinner_loader {
+  height: 80px;
+  width: 80px;
+}

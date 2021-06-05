@@ -39,11 +39,16 @@
         
                 </div>
             </nav> -->
-                <button type="button" id="sidebarCollapse" class="navbar-btn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <div class="increment_inputs">
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div id="spinner-box" class="not-visible" id="spinner_box">
+                        <div class="spinner-border text-primary" role="status"><img src="{% static 'image/Bean_eater.gif' %}" alt="Loading .." class="spinner_loader"/></div>
+                    </div>
+                </div>
                 <form method="POST">
                  {% csrf_token %}
                 <div id="form_custom_class" >
@@ -66,7 +71,7 @@
                         </button>
                     </span>
                     </div>
-                    <button class="predict_now" type="Submit" name="submit" value="Submit">Predict</button>
+                    <button class="predict_now" type="Submit" name="submit" value="Submit" id="predict_now">Predict</button>
                     {% if is_error %}
                     <div class='notification {{ mesg_class }}'>{{ message }}</div>
                     {% endif %}

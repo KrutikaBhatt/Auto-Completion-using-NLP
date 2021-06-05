@@ -15,3 +15,25 @@ $(document).ready(function () {
       })
 });
 
+const spinnerBox = document.getElementById('spinner_box');
+const predict_button = document.getElementById('predict_now');
+
+const handleGetData = () => {
+  $.ajax({
+      type: 'POST',
+      url: `/`,
+      success: function(response){
+          spinnerBox.classList.remove('not-visible')
+          setTimeout(()=>{
+              spinnerBox.classList.add('visible_spinner')
+          }, 2000)
+      },
+      error: function(error){
+          console.log(error)
+      }
+  })
+}
+
+predict_button.addEventListener('click',()=>{
+  handleGetData();
+})
