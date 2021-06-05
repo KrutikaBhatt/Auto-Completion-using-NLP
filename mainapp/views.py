@@ -8,11 +8,15 @@ def homepage(request):
     initial_value={
         'smooth_num':1.00,
     }
+
     mesg=""
     mesg_class=""
     err=""
+    suggestions=[]
+    error_ = False
+    got_suggestion = False
     form = InputForm(initial=initial_value)
-
+    
     if request.method =='POST':
         form = InputForm(request.POST,initial=initial_value)
         if form.is_valid():
@@ -21,15 +25,28 @@ def homepage(request):
             start_letter = form.cleaned_data['start_letter']
             tokenized = sentence.split(' ')
             print(tokenized)
-            suggestions = get_suggestions(tokenized,start_letter,smooth_factor)
-            print(suggestions)
+            suggestion = get_suggestions(tokenized,start_letter,smooth_factor)
+            suggestions.append(suggestion)
+            got_suggestion =True
+
+            
     if err:
+        error_ = True
         mesg = err
         mesg_class='is-danger'
     else:
         mesg = "Your Predictions"
         mesg_class='is-success'
-    return render(request, 'home.html',{'forms':form})
+
+    response_form={
+        'forms':form,
+        'is_error':error_,
+        'made_sugg' : got_suggestion,
+        'suggestions':suggestions,
+        'message':mesg,
+        'mesg_class' :mesg_class
+    }
+    return render(request, 'home.html',response_form)
 
 def get_suggestions(tokenized,start_letter,smooth_factor):
     n_gram_list = pickle.load(open('C:/Users/User/auto_completion/auto_completion/mainapp/data/en_counts.txt', 'rb'))

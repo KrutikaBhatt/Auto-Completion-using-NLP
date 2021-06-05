@@ -173,6 +173,7 @@ a, a:hover, a:focus {
 
 .predict_now{
   margin-top:50px;
+  margin-bottom: 30px;
   width:100px;
   height:30px;
   border:1px solid rgb(148, 147, 147);
@@ -199,4 +200,18 @@ input[type="number"] {
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
+}
+
+.suggestion_box {
+  background-color:rgb(227, 229, 233) ;
+  color:rgb(68, 66, 66);
+  height:80px;
+  width:400px;
+  padding:10px 14px 14px 10px;
+  margin-top: 5px;
+}
+.suggestion_box h4{
+  font-size: 1.00rem;
+  color:rgb(68, 66, 66);
+  
 }

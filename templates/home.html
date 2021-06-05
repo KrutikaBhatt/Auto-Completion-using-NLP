@@ -66,10 +66,23 @@
                         </button>
                     </span>
                     </div>
-                    {% if message  %}
+                    <button class="predict_now" type="Submit" name="submit" value="Submit">Predict</button>
+                    {% if is_error %}
                     <div class='notification {{ mesg_class }}'>{{ message }}</div>
                     {% endif %}
-                    <button class="predict_now" type="Submit" name="submit" value="Submit">Predict</button>
+
+                    {% if not is_error %}
+                        {% if made_sugg %}
+                            {% if message  %}
+                            <div class='notification {{ mesg_class }}'>{{ message }}</div>
+                            {% endif %}
+                            <div class="suggestion_box">
+                                {% for suggest in suggestions %}
+                                 <h4>{{ suggest }}</h4>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endif %}
                 </div>
                 </form>
            </div>
