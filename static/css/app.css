@@ -222,6 +222,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .not-visible{
   display: none;
+  position:absolute; 
+  right:100px;
+  top:50px;
 }
 .spinner_loader {
   height: 80px;

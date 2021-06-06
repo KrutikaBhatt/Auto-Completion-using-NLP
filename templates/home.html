@@ -45,7 +45,7 @@
                         <span></span>
                         <span></span>
                     </button>
-                    <div id="spinner-box" class="not-visible" id="spinner_box">
+                    <div class="not-visible visible_spinner" id="spinner_box">
                         <div class="spinner-border text-primary" role="status"><img src="{% static 'image/Bean_eater.gif' %}" alt="Loading .." class="spinner_loader"/></div>
                     </div>
                 </div>
@@ -71,7 +71,9 @@
                         </button>
                     </span>
                     </div>
-                    <button class="predict_now" type="Submit" name="submit" value="Submit" id="predict_now">Predict</button>
+                    <div id="Predict_now_id">
+                    <button class="predict_now" type="Submit" name="submit" value="Submit" >Predict</button>
+                    </div>
                     {% if is_error %}
                     <div class='notification {{ mesg_class }}'>{{ message }}</div>
                     {% endif %}
